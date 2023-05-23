@@ -69,6 +69,7 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
+            label13 = new Label();
             chartReport = new System.Windows.Forms.DataVisualization.Charting.Chart();
             tabPage3 = new TabPage();
             buttonAddDir = new Button();
@@ -84,7 +85,6 @@
             tabPage4 = new TabPage();
             label11 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            label13 = new Label();
             tabControlMain.SuspendLayout();
             tabPage1.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -240,7 +240,7 @@
             // 
             comboBoxSex.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSex.FormattingEnabled = true;
-            comboBoxSex.Items.AddRange(new object[] { "Муж.", "Жен.", "Гермафродит" });
+            comboBoxSex.Items.AddRange(new object[] { "Муж.", "Жен." });
             comboBoxSex.Location = new Point(6, 155);
             comboBoxSex.Name = "comboBoxSex";
             comboBoxSex.Size = new Size(214, 23);
@@ -452,6 +452,15 @@
             tabPage2.Text = "Отчет";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(3, 3);
+            label13.Name = "label13";
+            label13.Size = new Size(127, 15);
+            label13.TabIndex = 5;
+            label13.Text = "Причины обращения";
+            // 
             // chartReport
             // 
             chartArea1.Name = "ChartArea1";
@@ -592,15 +601,6 @@
             label11.Size = new Size(383, 15);
             label11.TabIndex = 4;
             label11.Text = "Чтобы узнать причину обращения, дабл клик по заголовку строчки";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(3, 3);
-            label13.Name = "label13";
-            label13.Size = new Size(127, 15);
-            label13.TabIndex = 5;
-            label13.Text = "Причины обращения";
             // 
             // App
             // 
