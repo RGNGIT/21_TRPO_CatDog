@@ -10,14 +10,24 @@ namespace _21_TRPO_CatDog
             InitializeComponent();
         }
 
-        void BuildReport()
+        void BuildReport(bool dated)
         {
             chartReport.Series.Clear();
             List<string> reasons = new List<string>();
             List<string> distinctReasons = new List<string>();
             foreach (PlainDatabase.Pet pet in PlainDatabase.Pets)
             {
-                reasons.Add(pet.ReasonCall!);
+                if (dated)
+                {
+                    if (dateTimePickerFrom.Value.Ticks <= pet.DateCall!.Value.Ticks && pet.DateCall!.Value.Ticks <= dateTimePickerTo.Value.Ticks)
+                    {
+                        reasons.Add(pet.ReasonCall!);
+                    }
+                }
+                else
+                {
+                    reasons.Add(pet.ReasonCall!);
+                }
             }
             foreach (string reason in reasons)
             {
@@ -52,7 +62,7 @@ namespace _21_TRPO_CatDog
                 comboBoxSex.Text,
                 comboBoxPoroda.Text,
                 textBoxFIOOwner.Text,
-                dateTimePickerDateCall.Text,
+                dateTimePickerDateCall.Value,
                 textBoxReason.Text
             ));
             UpdateVet();
@@ -124,7 +134,7 @@ namespace _21_TRPO_CatDog
                     UpdateCombos();
                     break;
                 case 1:
-                    BuildReport();
+                    BuildReport(false);
                     break;
                 case 2:
                     UpdateDir(tabControlDir.SelectedIndex);
@@ -160,7 +170,7 @@ namespace _21_TRPO_CatDog
                 dataGridViewVet.Rows[i].Cells[3].Value.ToString()!,
                 dataGridViewVet.Rows[i].Cells[4].Value.ToString()!,
                 dataGridViewVet.Rows[i].Cells[5].Value.ToString()!,
-                dataGridViewVet.Rows[i].Cells[6].Value.ToString()!,
+                DateTime.Parse(dataGridViewVet.Rows[i].Cells[6].Value.ToString()!),
                 dataGridViewVet.Rows[i].Cells[7].Value.ToString()!
             );
             }
@@ -171,6 +181,11 @@ namespace _21_TRPO_CatDog
         {
             PlainDatabase.Pets.RemoveAt(dataGridViewVet.SelectedRows[0].Index);
             UpdateVet();
+        }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            BuildReport(true);
         }
     }
 }

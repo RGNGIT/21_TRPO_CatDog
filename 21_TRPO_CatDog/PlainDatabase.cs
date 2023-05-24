@@ -7,7 +7,7 @@
         public class Pet
         {
 
-            public Pet(string Name, string DOB, string Kind, string Sex, string Breed, string OwnerFIO, string DateCall, string ReasonCall)
+            public Pet(string Name, string DOB, string Kind, string Sex, string Breed, string OwnerFIO, DateTime DateCall, string ReasonCall)
             {
                 this.Name = Name;
                 this.DOB = DOB;
@@ -19,7 +19,7 @@
                 this.ReasonCall = ReasonCall;
             }
 
-            public void Updater(string Name, string DOB, string Kind, string Sex, string Breed, string OwnerFIO, string DateCall, string ReasonCall)
+            public void Updater(string Name, string DOB, string Kind, string Sex, string Breed, string OwnerFIO, DateTime DateCall, string ReasonCall)
             {
                 this.Name = Name;
                 this.DOB = DOB;
@@ -37,7 +37,7 @@
             public string? Sex { get; set; }
             public string? Breed { get; set; }
             public string? OwnerFIO { get; set; }
-            public string? DateCall { get; set; }
+            public DateTime? DateCall { get; set; }
             public string? ReasonCall { get; set; }
         }
 

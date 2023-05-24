@@ -85,6 +85,11 @@
             tabPage4 = new TabPage();
             label11 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            dateTimePickerFrom = new DateTimePicker();
+            dateTimePickerTo = new DateTimePicker();
+            label14 = new Label();
+            label15 = new Label();
+            buttonReport = new Button();
             tabControlMain.SuspendLayout();
             tabPage1.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -442,6 +447,11 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(buttonReport);
+            tabPage2.Controls.Add(label15);
+            tabPage2.Controls.Add(label14);
+            tabPage2.Controls.Add(dateTimePickerTo);
+            tabPage2.Controls.Add(dateTimePickerFrom);
             tabPage2.Controls.Add(label13);
             tabPage2.Controls.Add(chartReport);
             tabPage2.Location = new Point(4, 24);
@@ -473,7 +483,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             chartReport.Series.Add(series1);
-            chartReport.Size = new Size(778, 411);
+            chartReport.Size = new Size(552, 411);
             chartReport.TabIndex = 0;
             chartReport.Text = "chart1";
             // 
@@ -602,6 +612,48 @@
             label11.TabIndex = 4;
             label11.Text = "Чтобы узнать причину обращения, дабл клик по заголовку строчки";
             // 
+            // dateTimePickerFrom
+            // 
+            dateTimePickerFrom.Location = new Point(564, 24);
+            dateTimePickerFrom.Name = "dateTimePickerFrom";
+            dateTimePickerFrom.Size = new Size(225, 23);
+            dateTimePickerFrom.TabIndex = 6;
+            // 
+            // dateTimePickerTo
+            // 
+            dateTimePickerTo.Location = new Point(564, 68);
+            dateTimePickerTo.Name = "dateTimePickerTo";
+            dateTimePickerTo.Size = new Size(225, 23);
+            dateTimePickerTo.TabIndex = 7;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(564, 6);
+            label14.Name = "label14";
+            label14.Size = new Size(15, 15);
+            label14.TabIndex = 8;
+            label14.Text = "С";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(564, 50);
+            label15.Name = "label15";
+            label15.Size = new Size(23, 15);
+            label15.TabIndex = 9;
+            label15.Text = "По";
+            // 
+            // buttonReport
+            // 
+            buttonReport.Location = new Point(564, 394);
+            buttonReport.Name = "buttonReport";
+            buttonReport.Size = new Size(225, 23);
+            buttonReport.TabIndex = 10;
+            buttonReport.Text = "Отсеить";
+            buttonReport.UseVisualStyleBackColor = true;
+            buttonReport.Click += buttonReport_Click;
+            // 
             // App
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -694,5 +746,10 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartReport;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label13;
+        private DateTimePicker dateTimePickerFrom;
+        private Label label15;
+        private Label label14;
+        private DateTimePicker dateTimePickerTo;
+        private Button buttonReport;
     }
 }
